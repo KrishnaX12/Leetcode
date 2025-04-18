@@ -1,0 +1,18 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        return (x==0)?true:(x<0)?false:Solution.dopal(x);
+    }
+    public static boolean dopal(int x){
+        int i,j=0;
+        int n = x;
+        while(x!=0){
+            i=x%10;
+            j=j*10+i;
+            x/=10;
+        }
+        if(n==j){
+            return true;
+        }
+        return false;
+    }
+}
