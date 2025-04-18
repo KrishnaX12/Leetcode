@@ -1,0 +1,13 @@
+class Solution {
+    public int reverse(int x) {
+        int n = x;
+        long rev = 0;
+        while(n!=0){
+            if (Integer.MIN_VALUE > rev*10+n%10 || Integer.MAX_VALUE - 1 < rev*10+n%10) return
+            0; 
+            rev = rev*10+n%10;
+            n/=10;
+        }
+        return (int)rev;
+    }
+}
