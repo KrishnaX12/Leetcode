@@ -1,0 +1,15 @@
+class Solution {
+    public int countSubarrays(int[] nums) {
+        int l = 0;
+        int r = 2;
+        int c = 0;
+        while(r < nums.length){
+            if((double)nums[l]+nums[r] == (double)nums[r-1]/2 ){
+                c++;
+            }
+            l++;
+            r++;
+        }
+        return c;
+    }
+}
