@@ -1,0 +1,16 @@
+class NumArray {
+    int[] p_sums;
+    public NumArray(int[] nums) {
+        p_sums = new int[nums.length];
+        psums[0] = num[0];
+        for(int i=1;i<nums.length;i++){
+            p_sums[i] = p_sums[i-1] + nums[i];
+        }
+    }
+    public int sumRange(int left, int right) {
+        if(left > 0){
+            return p_sums[right] - p_sums[left-1];
+        }
+        return p_sums[right];
+    }
+}
